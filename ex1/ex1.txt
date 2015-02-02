@@ -1,0 +1,63 @@
+1. A detailed help screen that explains the goto function in the turtle module,
+describing the possible arguments for this function and uses.
+2. The shell prints that it's a funcion (I do not know what the number after "at" means)
+3. A graphics window has opened and a black line was drawn from 
+the center of it to a righter-upper point.
+
+PART 4 - UNIX ENVIRONMENT
+
+1. mkdir : creates an empty directory with a given name.
+rmdir : deletes an empty directory with a given name.
+cd : changes the directory to a chosen path.
+cd ~ : changes the directory to the home directory of the current user.
+cd ~/: does the same as cd ~. (if you meant cd / : it changes the directory
+to the root directory in the file system.)
+
+2. The directory '.' is the current directory. the '..' one is the parent directory 
+(one step up in the file system). It can be useful when you want to copy files 
+from a parent directory to the current one. "cp ../file.tar ." - copies a file named
+'file.tar' from parent to current directory.
+
+3. relative path is a path that depends on your current location.
+(if i'm at home dir: "safe/intro2cs..." is a relative path) and an absolute path is a 
+full path that describes the exact spot in the filesystem ("/cs/stud/ransha/safe/intro2cs/")
+
+4. The signs '*' and '?' are used if we don't want to enter specific characters.
+* is used when it's a number of characters that we don't specify, and the ?
+replaces a specific one. for example "ls *.??" prints a list of files that contain
+any number of characters as a name (before the .) and only two characters for type
+(after the .)
+in the case of ex1 directory (as it is now), it prints the list of Hello.py and HelloTurtle.py.
+it can also be used for the cp command. for example 'cp *.py ~/Documents' (copies all .py files
+to the Documents directory).
+
+5. the & sign is to run a program in the background, thus allowing us to keep 
+using the shell. If we forgot this sign we can press CTRL + C to terminate the 
+running app in the foreground, or alternatively press CTRL + Z to  suspend it and then
+type 'bg' to send it to the background and use the shell.
+
+6. the permissions for a file is written after it's type (-/d) when you run
+the ls -l command (the file name is in the end of the line). it is described 
+by 3 triplets of rwx, the first one describes the owner's permissions (read,write,execute),
+the second to describe group's and the last to describe others' permissions.
+
+7. grep -n 'turtle.goto' safe/intro2cs/ex1/HelloTurtle.py : 
+when ran from home dir, it prints to the console all the lines that contain 
+the phrase 'turtle.goto' and the number of the line it appears in (-n).
+
+cat ex1.txt :
+when inside the ex1 dir, it prints the contents of the text file 'ex1.txt' to the console.
+(also works with other simple files such as *.py)
+
+diff -y ex0 ex1 :
+when in intro2cs dir, it prints which files are uniqe to each dir ('Only in ex0: ex0.tar')
+and the difference between files that has the same names in these directories (Hello.py, HelloTurtle.py)
+(it shows which lines are missing in each file) - all of these - in 2 columns (-y).
+
+wc -l HelloTurtle.py
+prints to the console the number of lines (newlines) in the file specified, followed
+by the file name ('50 HelloTurtle.py'). without the -l, it will also output the bytes and
+words count.
+
+cal - prints a simple monthly calander that highlights today.
+

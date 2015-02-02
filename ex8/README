@@ -1,0 +1,50 @@
+ransha
+203781000
+Ran Shaham
+
+==========================
+=  README for ex8: O O P =
+==========================
+
+==================
+=  Description:  =
+==================
+
+In this exercise we used pre made classes and objects to create a working
+'Asteroids' game! We learned how to use APIs, how to write our own methods
+and learned some basic principles of games design.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README            This file
+
+asteroidsMain.py  Contains the methods and functions that I wrote in order
+                  to run the game properly.
+
+gameMaster.py     I changed this file for the bonus to work. added methods and
+                  variables for the heat-seeking missile. (see file header)
+
+asteroidsBonus.py The game WITH a super cool Heat-Seeking missile!!! press 'h'
+                  for the missile.
+
+missile.py        The HeatSeeker class. contains methods that calculate it's
+                  course.
+
+torpedo.py        I added the method get_type() to differ the torpedos from
+                  missiles.
+
+baseObject.py     I added the method set_angle(angle) to be able to change the
+                  angle to a specific value (for the heat-seeker)
+
+========
+= NOTE =
+========
+
+I made some changes to the behavior of the game (not only the bonus):
+1) There is a limit to the ship's speed to make the game more playable
+2) When the ship is destroyed, it re appears in the middle of the screen
+   with 0 speed (same orientation, though), again to make the game to behave
+   better
+3) bonus #2 is also in the asteroidsBonus.py file.

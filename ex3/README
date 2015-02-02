@@ -1,0 +1,52 @@
+ransha
+203781000
+Ran Shaham
+
+
+==========================
+=  README for ex3: Loops =
+==========================
+
+
+==================
+=  Description:  =
+==================
+In this exercise I learned how to combine loops and conditions to solve
+problems.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README		          This file
+findLargest.py        Finds the maximum in a given sequence of numbers
+findSecondSmallest.py Finds the single number that is greater than the
+                      minimum in a sequence of numbers
+totalWeight.py        Sums the inputs until threshold or a keyword is reached
+twoDimensionalSeek.py Calculates the absolute position in a plain
+ithElementValue.py    Calculates the value of a chosen element in
+                      Fibonacci sequence (general knowledge)
+decomposition.py      Decomposes a chosen number to it's elements
+                      from right to left
+binaryToDecimal.py    Converts a chosen number from binary base to decimal
+decimalToBinary.py    Converts a chosen number from decimal base to binary
+
+=========================
+= Answers to question 9 =
+=========================
+
+*After reading this question, I found that there is no significant 
+ difference between conversion between different bases, and therefore
+ I re-wrote most of my code. The mathematic principle used to convert
+ a number between bases is similar.
+
+*The minimal change that needed to be done in the 7th or 8th question to
+ solve the other one is swapping the 'to_base','from_base' variables values
+
+*The new code I wrote can convert numbers from chosen base (smaller than 10)
+ to another one, with the same changes that needed to be done for solving
+ question 8 instead of 7 or the other way around. (base_source=from_base
+                                                   base_target=to_base)
+ For example, to change the 8th question code from decimal to binary
+ to binary to decimal, the variable from_base needs to be changed to 2
+ and the to_base variable needs to be changed to 10. That's it.

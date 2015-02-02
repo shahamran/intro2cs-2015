@@ -1,0 +1,7 @@
+ObjectGame documentation
+**************************
+In this module you can find definitions for the available methods to help
+you create new objects for the bonus part of the exercise.
+
+.. autoclass:: originalGame.OriginalGame
+   :members:

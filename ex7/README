@@ -1,0 +1,29 @@
+ransha
+203781000
+Ran Shaham
+
+======================================
+=  README for ex7a: Image Morphing   =
+======================================
+
+==================
+=  Description:  =
+==================
+
+The first part of a program that takes two images and a set of similar points
+in them and creates a sequence of intermediate images that gradually transform
+the first image to the second.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README      This file
+ex7.py      Contains some of the functions for the creation of the morphing
+            effect. Mainly consists of mathematical and technical functions.
+
+========
+= NOTE =
+========
+
+

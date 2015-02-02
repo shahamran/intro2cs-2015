@@ -1,0 +1,27 @@
+ransha
+203781000
+Ran Shaham
+
+===============================
+=  README for ex6: Recursion  =
+===============================
+
+
+==================
+=  Description:  =
+==================
+In this exercise we wrote an 3 files that demonstrate the use of 
+recursive functions.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README                  This file
+palindrome.py           Contains 2 functions that check if a certain string is
+                        a palindrome or not.
+balanced_brackets.py    Contains 3 functions that check if a string contains
+                        balanced sets of brackets (and return different vals)
+y_tree.py               A simple app that draws a tree using turtle and a
+                        recursive function.
+

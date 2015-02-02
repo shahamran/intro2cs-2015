@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BaseObject documentation &mdash; Asteroids 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Asteroids 1.0 documentation" href="index.html" />
+    <link rel="next" title="GameMaster documentation" href="gamemaster.html" />
+    <link rel="prev" title="Welcome to Asteroids’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gamemaster.html" title="GameMaster documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Asteroids’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="baseobject-documentation">
+<h1>BaseObject documentation<a class="headerlink" href="#baseobject-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="baseObject.BaseObject">
+<em class="property">class </em><tt class="descclassname">baseObject.</tt><tt class="descname">BaseObject</tt><big>(</big><em>canvas</em>, <em>x</em>, <em>y</em>, <em>speedX</em>, <em>speedY</em>, <em>shape</em>, <em>direction=None</em>, <em>rad=1</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents our standard object in the game.
+All of your classes (ship,asteroid,torpedo) should inherit from this class.</p>
+<dl class="method">
+<dt id="baseObject.BaseObject.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>canvas</em>, <em>x</em>, <em>y</em>, <em>speedX</em>, <em>speedY</em>, <em>shape</em>, <em>direction=None</em>, <em>rad=1</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>To instanciate a class that inherits from BaseObject you must call in the
+first line of you __init__ function to:
+super().__init__(&lt;params&gt;) where the parameters are explained below:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>canvas</strong> (<em>Turtle.ScrolledCanvas</em>) &#8211; The canvas on which we should draw our object.</li>
+<li><strong>x</strong> (<em>int</em>) &#8211; The x coordinate of the object.</li>
+<li><strong>y</strong> (<em>int</em>) &#8211; The y coordinate of the object.</li>
+<li><strong>xSpeed</strong> (<em>int</em>) &#8211; The current speed on the x direction.</li>
+<li><strong>ySpeed</strong> (<em>int</em>) &#8211; The current speed on the y direction.</li>
+<li><strong>shape</strong> (<em>int</em>) &#8211; The shape of the object, should be taken from the module objectShapes.</li>
+<li><strong>direction</strong> &#8211; The direction (in degrees) we are currently heading.</li>
+<li><strong>shape</strong> &#8211; The radius of the object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.decrease_angle">
+<tt class="descname">decrease_angle</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.decrease_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decreases the angle of our spaceship by 7 degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_angle">
+<tt class="descname">get_angle</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current angle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_radius">
+<tt class="descname">get_radius</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the radius of the object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_speed_x">
+<tt class="descname">get_speed_x</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_speed_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current speed on the x direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_speed_y">
+<tt class="descname">get_speed_y</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_speed_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current speed on the y direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_x_cor">
+<tt class="descname">get_x_cor</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_x_cor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current x coordinate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.get_y_cor">
+<tt class="descname">get_y_cor</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.get_y_cor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current y coordinate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.increase_angle">
+<tt class="descname">increase_angle</tt><big>(</big><big>)</big><a class="headerlink" href="#baseObject.BaseObject.increase_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increases the angle of our spaceship by 7 degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.move">
+<tt class="descname">move</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the object to the specified (x,y) coordinate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) &#8211; The x coordinate.</li>
+<li><strong>y</strong> (<em>int</em>) &#8211; The y coordinate.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>clr</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the object color to the provided clr value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>clr</strong> (<em>str</em>) &#8211; A string specifying the color</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.set_speed_x">
+<tt class="descname">set_speed_x</tt><big>(</big><em>speedX</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject.set_speed_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current speed on the x direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>speedX</strong> (<em>int</em>) &#8211; The speed to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="baseObject.BaseObject.set_speed_y">
+<tt class="descname">set_speed_y</tt><big>(</big><em>speedY</em><big>)</big><a class="headerlink" href="#baseObject.BaseObject.set_speed_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current speed on the y direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>speedY</strong> (<em>int</em>) &#8211; The speed to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Asteroids&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gamemaster.html"
+                        title="next chapter">GameMaster documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/baseobject.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gamemaster.html" title="GameMaster documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Asteroids’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Intro Staff.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

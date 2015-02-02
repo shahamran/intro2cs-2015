@@ -1,0 +1,139 @@
+from torpedo import *
+from asteroid import *
+from spaceship import *
+from gameMaster import *
+
+class GameRunner:
+    
+
+    def __init__(self, amnt = 3):
+        self.game = GameMaster()
+        self.screenMaxX = self.game.get_screen_max_x()
+        self.screenMaxY = self.game.get_screen_max_y()
+        self.screenMinX = self.game.get_screen_min_x()
+        self.screenMinY = self.game.get_screen_min_y()
+        shipStartX = (self.screenMaxX-self.screenMinX)/2 + self.screenMinX
+        shipStartY = (self.screenMaxY-self.screenMinY)/2 + self.screenMinY
+        self.game.set_initial_ship_cords( shipStartX, shipStartY )
+        self.game.add_initial_astroids(amnt)
+        self.DIMS = 2
+        self.MAX_TORPEDOS = 20 
+        
+        self._BIG_AST = (3, 20)
+        self._MED_AST = (2, 50
+        self._SMALL_AST = (1, 100)
+        self._AST_SIZE = [self._SMALL_AST, self._MED_AST, self._BIG_AST]
+
+
+    def run(self):
+        self._do_loop()
+        self.game.start_game()
+
+
+    def _do_loop(self):
+        self.game.update_screen()
+        self.game_loop()
+        # Set the timer to go off again
+        self.game.ontimer(self._do_loop,5)
+
+    def _moveObject(self, obj):
+        axisMin = (self.screenMinX,self.screenMinY)
+        axisMax = (self.screenMaxX,self.screenMaxY)
+        new_cord = [0] * self.DIMS
+        obj_speed = (obj.get_speed_x(),obj.get_speed_y())
+        obj_xy = (obj.get_x_cor(),obj.get_y_cor())
+        for i in range(self.DIMS):
+            delta = axisMax[i] - axisMin[i]
+            new_cord[i] = (obj_speed[i] + obj_xy[i] - axisMin[i]) % delta + \
+                                                              axisMin[i]
+        
+        obj.move(new_cord[0], new_cord[1])
+
+        
+    def _deg_to_rad(self, deg):
+        return deg * 2 * math.pi / 360
+        
+    def handle_fire(self, ship, speed, torpedos):
+        if len(torpedos) < self.MAX_TORPEDOS:
+                x,y = ship.get_x_cor(), ship.get_y_cor()
+                angle = ship.get_angle()
+                angle_rad = self._deg_to_rad(angle)
+                factor = ( math.cos(angle_rad), math.sin(angle_rad) )
+                new_speed = [0] * self.DIMS
+                for i in range(self.DIMS):
+                    new_speed[i] = speed[i] + 2 * factor[i]
+                    
+                self.game.add_torpedo(x, y, new_speed[0], new_speed[1], angle)
+                
+                
+    def check_key_press(self, ship):
+    
+        
+        speed = [ ship.get_speed_x(), ship.get_speed_y() ]
+        
+        if self.game.is_fire_pressed():
+            self.handle_fire(ship,speed,torpedos)
+            
+        if self.game.is_right_pressed():
+            self.game.ship.increase_angle()
+            
+        if self.game.is_left_pressed():
+            self.game.ship.decrease_angle()
+            
+        if self.game.is_up_pressed():
+            new_speed = [0] * self.DIMS 
+            angle_rad = self._deg_to_rad( ship.get_angle() )
+            factor = ( math.cos(angle_rad), math.sin(angle_rad) )
+            
+            for i in range(self.DIMS):
+                speed[i] += factor[i]
+            ship.set_speed_x(speed[0])
+            ship.set_speed_y(speed[1])
+    
+    def check_intersection(self, torpedos, asteroids):
+    
+        for torpedo in torpedos:
+            for asteroid in asteroids:
+                if self.game.intersect(torpedo,asteroid):
+                    
+                    for size,score in enumerate(self._AST_SIZE):
+                        if asteroid.get_size() == size:
+                            self.game.add_score(score)
+                            break
+                   
+                    
+    def game_loop(self):
+        torpedos = self.game.get_torpedos()
+        dead_torpedos = []
+        asteroids = self.game.get_asteroids()
+        ship = self.game.get_ship()
+        
+        
+        for asteroid in asteroids:
+            self._moveObject(asteroid)
+            
+        self.check_key_press(ship)
+
+        self._moveObject(ship)
+            
+        
+            
+        
+        for torpedo in torpedos:
+            if torpedo.get_life_span() <= 0:
+                dead_torpedos.append(torpedo)
+                continue
+            self._moveObject(torpedo)
+            if self.game.intersect(torpedo, asteroid for asteroid in asteroids):
+                
+        
+        self.game.remove_torpedos(dead_torpedos)
+        
+
+
+def main():
+    runner = GameRunner()
+    runner.run()
+
+if __name__ == "__main__":
+    main()

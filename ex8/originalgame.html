@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ObjectGame documentation &mdash; Asteroids 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Asteroids 1.0 documentation" href="index.html" />
+    <link rel="prev" title="ObjectShapes documentation" href="objectshapes.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="objectshapes.html" title="ObjectShapes documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="objectgame-documentation">
+<h1>ObjectGame documentation<a class="headerlink" href="#objectgame-documentation" title="Permalink to this headline">¶</a></h1>
+<p>In this module you can find definitions for the available methods to help
+you create new objects for the bonus part of the exercise.</p>
+<dl class="class">
+<dt id="originalGame.OriginalGame">
+<em class="property">class </em><tt class="descclassname">originalGame.</tt><tt class="descname">OriginalGame</tt><big>(</big><em>game</em><big>)</big><a class="headerlink" href="#originalGame.OriginalGame" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="originalGame.OriginalGame.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>game</em><big>)</big><a class="headerlink" href="#originalGame.OriginalGame.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="originalGame.OriginalGame.add_original_torpedo">
+<tt class="descname">add_original_torpedo</tt><big>(</big><em>torpedo</em><big>)</big><a class="headerlink" href="#originalGame.OriginalGame.add_original_torpedo" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function allows you to add specaily crafted torpedos.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>torpedo</strong> (<em>BaseObject</em>) &#8211; The new torpedo to add</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="originalGame.OriginalGame.add_shape">
+<tt class="descname">add_shape</tt><big>(</big><em>name</em>, <em>cords</em>, <em>override=False</em><big>)</big><a class="headerlink" href="#originalGame.OriginalGame.add_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a shape, and binds it into the screen so we could paint it later on.
+If this shape was previously defined than it won&#8217;t be changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; The name of the shape.</li>
+<li><strong>cords</strong> (<em>tuple of tuples of ints</em>) &#8211; <p>The coordinates of the shape, for example our ship is
+defined like so &#8216;((-10,-10),(0,-5),(10,-10),(0,10))&#8217; -</p>
+<p>our first line will go from (-10,-10) towards (0,-5) then
+the next line to (10,-10) and from there to (0,10) - this
+is the last point so it will also close the picture.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="originalGame.OriginalGame.bind_key">
+<tt class="descname">bind_key</tt><big>(</big><em>key</em>, <em>func</em><big>)</big><a class="headerlink" href="#originalGame.OriginalGame.bind_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is to allow you to add some functionality of your own,
+it allows you to bind the provided function to the desired input key.</p>
+<p>If there is already a function bound to this key it will do nothing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<em>str</em>) &#8211; A key to bind.</li>
+<li><strong>func</strong> (<em>function</em>) &#8211; The function to bind</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="objectshapes.html"
+                        title="previous chapter">ObjectShapes documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/originalgame.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="objectshapes.html" title="ObjectShapes documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Intro Staff.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

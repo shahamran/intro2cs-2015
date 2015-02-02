@@ -1,0 +1,7 @@
+ObjectShapes documentation
+**************************
+In this module you can find definitions of the available shapes, and define
+shapes of your own.
+
+.. autoclass:: objectShapes.ShapesMaster
+   :members:

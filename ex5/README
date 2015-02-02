@@ -1,0 +1,50 @@
+ransha
+203781000
+Ran Shaham
+
+===============================
+=  README for ex5: Perceptron =
+===============================
+
+
+==================
+=  Description:  =
+==================
+In this exercise we wrote an application that uses the perceptron
+algorithm in order to find a linear classifier for various types
+of data (from 2D to 784D)
+
+
+=============================
+=  List of submitted files: =
+=============================
+
+README          This file
+perceptron.py   The main functions file
+
+========================
+= Answers to questions =
+========================
+(5-a): The classifier that was found in the train data set was able
+to classify most of the test data, with the exception of two (index:57,118)
+I looked at those two:
+57: looks like the number 4 but the classifier failed probably because
+it's shape is too similar to a 7 (diagnoled line, a horizontal shorter
+line in the middle...)
+
+118: The line 119 (labels[118]) in the labels file sais '-1' which means the
+number 7. The image (data[118] looks more like a 4. The classifier didn't fail 
+in this case, because it didn't recognize 4 as a 7.
+
+(6-b): The current perceptron algorithm won't work because clearly there is no
+LINEAR classifier in the given data <=> Every line (1D hyperplane / A line)
+will not seperate the data correctly.
+We can see that there is an obvious classification rule: if the distance
+between the point (0,0) and the point in the data is greater than a certain
+value, it gets the label '1'. One way to use the perceptron in this case will
+be changing the data_bonus file from a set of 2D vectors, to set of 1D vectors
+which hold the distance of the 2D vector of each index from the point (0,0)<=> 
+data[i][0]^2 + data[i][1]^2 (and in general, sum (for each j) of data[i][j]^2)
+(NOTE for the real distance we need to get the square root of the sum)
+I tried this method, and found a classifier that successfuly sperates 2D data
+with similar attributes (I created new data and labels files).

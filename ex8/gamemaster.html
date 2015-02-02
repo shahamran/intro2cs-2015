@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GameMaster documentation &mdash; Asteroids 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Asteroids 1.0 documentation" href="index.html" />
+    <link rel="next" title="ObjectShapes documentation" href="objectshapes.html" />
+    <link rel="prev" title="BaseObject documentation" href="baseobject.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="objectshapes.html" title="ObjectShapes documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="baseobject.html" title="BaseObject documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gamemaster-documentation">
+<h1>GameMaster documentation<a class="headerlink" href="#gamemaster-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="gameMaster.GameMaster">
+<em class="property">class </em><tt class="descclassname">gameMaster.</tt><tt class="descname">GameMaster</tt><a class="headerlink" href="#gameMaster.GameMaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>This holds all of the state in the game, including methods to help accessing
+and modifying members (such as torpedos, asteroids etc.)</p>
+<p>You need to instantiate it only onec throughout -
+<strong>This was already done for you, look at the asteroidsMain.py file</strong></p>
+<p>To control the game you can use your keyboard controllers like so:</p>
+<p>&#8220;Left&#8221;, &#8220;Right&#8221;,&#8221;Up&#8221; - Movement</p>
+<p>&#8221; &#8221; -(space key) Fire a torpedo</p>
+<p>&#8220;q&#8221; - Quit the game</p>
+<dl class="method">
+<dt id="gameMaster.GameMaster.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes all of the containers needed for this class to work.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.add_asteroid">
+<tt class="descname">add_asteroid</tt><big>(</big><em>x</em>, <em>y</em>, <em>xSpeed</em>, <em>ySpeed</em>, <em>size</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.add_asteroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>This adds an asteroid into the game</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) &#8211; The x coordinate of the asteroid.</li>
+<li><strong>y</strong> (<em>int</em>) &#8211; The y coordinate of the asteroid.</li>
+<li><strong>xSpeed</strong> (<em>int</em>) &#8211; The current speed on the x direction.</li>
+<li><strong>ySpeed</strong> (<em>int</em>) &#8211; The current speed on the y direction.</li>
+<li><strong>size</strong> (<em>int</em>) &#8211; The size of our asteroid, this is for default asteroids.
+The available sizes are 3(big), 2(medium) and 1(small).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.add_initial_astroids">
+<tt class="descname">add_initial_astroids</tt><big>(</big><em>amnt=3</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.add_initial_astroids" title="Permalink to this definition">¶</a></dt>
+<dd><p>This adds the given amnt of asteroids into the game, this method should
+be called at the beginning of the game</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>amnt</strong> (<em>int</em>) &#8211; The amount of asteroids to add, defualts to 3</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.add_to_score">
+<tt class="descname">add_to_score</tt><big>(</big><em>val</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.add_to_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given value into our current score.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>int</em>) &#8211; The amount of scores to add to out current score</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.add_torpedo">
+<tt class="descname">add_torpedo</tt><big>(</big><em>x</em>, <em>y</em>, <em>xSpeed</em>, <em>ySpeed</em>, <em>angle</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.add_torpedo" title="Permalink to this definition">¶</a></dt>
+<dd><p>This adds a torpedo into the game</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) &#8211; The x coordinate of the torpedo.</li>
+<li><strong>y</strong> (<em>int</em>) &#8211; The y coordinate of the torpedo.</li>
+<li><strong>xSpeed</strong> (<em>int</em>) &#8211; The current speed on the x direction.</li>
+<li><strong>ySpeed</strong> (<em>int</em>) &#8211; The current speed on the y direction.</li>
+<li><strong>angle</strong> (<em>int</em>) &#8211; The angle the torpedo is headed to</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.end_game">
+<tt class="descname">end_game</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.end_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>This ends the current game.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_asteroids">
+<tt class="descname">get_asteroids</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_asteroids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of objects of type Asteroid, representing the current
+asteroids still living in our game</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_canvas">
+<tt class="descname">get_canvas</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_canvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should not be called by you - unless you implement new
+behaviour in the game.
+By using this canvas you could paint on the game board desired shapes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ScrolledCanvas &#8211;  The canvas on which turtle is painting the game</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_num_lives">
+<tt class="descname">get_num_lives</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_num_lives" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int &#8211; The amount of lives we have left, we initially have 3 lives.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_score">
+<tt class="descname">get_score</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_score" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int &#8211; The current score of the game</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_screen_max_x">
+<tt class="descname">get_screen_max_x</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_screen_max_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of the maximal X coordinate in the active game screen</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_screen_max_y">
+<tt class="descname">get_screen_max_y</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_screen_max_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of the maximal Y coordinate in the active game screen</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_screen_min_x">
+<tt class="descname">get_screen_min_x</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_screen_min_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of the minimal X coordinate in the active game screen</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_screen_min_y">
+<tt class="descname">get_screen_min_y</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_screen_min_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of the minimal Y coordinate in the active game screen</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_ship">
+<tt class="descname">get_ship</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_ship" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpaceShip &#8211; Our ship object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.get_torpedos">
+<tt class="descname">get_torpedos</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.get_torpedos" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of live torpedos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.intersect">
+<tt class="descname">intersect</tt><big>(</big><em>object1</em>, <em>object2</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.intersect" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is used to determine if two object have collided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>object1</strong> (<em>BaseObject</em>) &#8211; The first object</li>
+<li><strong>object2</strong> (<em>BaseObject</em>) &#8211; The second object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.is_fire_pressed">
+<tt class="descname">is_fire_pressed</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.is_fire_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the fire key was pressed, else False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.is_left_pressed">
+<tt class="descname">is_left_pressed</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.is_left_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the left key was pressed, else False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.is_right_pressed">
+<tt class="descname">is_right_pressed</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.is_right_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the right key was pressed, else False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.is_up_pressed">
+<tt class="descname">is_up_pressed</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.is_up_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the up key was pressed, else False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.ontimer">
+<tt class="descname">ontimer</tt><big>(</big><em>func</em>, <em>milli</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.ontimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is used to create a repeating action in your game.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>You don&#8217;t need to call this method, it was already called for you at the end of the main game loop.</strong></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<em>function</em>) &#8211; The function to repeat after <strong>milli</strong> milliseconds have passed</li>
+<li><strong>milli</strong> (<em>int</em>) &#8211; The amount of milliseconds to wait before starting the given
+function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.remove_asteroid">
+<tt class="descname">remove_asteroid</tt><big>(</big><em>asteroid</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.remove_asteroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the given asteroid from our asteroids list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>asteroid</strong> (<em>Asteroid</em>) &#8211; The asteroid to remove from our list of asteroids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.remove_torpedos">
+<tt class="descname">remove_torpedos</tt><big>(</big><em>deadtorpedos</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.remove_torpedos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the given list of dead torpedos from our live torpedos list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>deadtorpedos</strong> (<em>list</em>) &#8211; The list of dead torpedos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.set_initial_ship_cords">
+<tt class="descname">set_initial_ship_cords</tt><big>(</big><em>xCor</em>, <em>yCor</em>, <em>xSpeed=0</em>, <em>ySpeed=0</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.set_initial_ship_cords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the initial coordinations for our ship, allows to set a starting
+speed for both x and y directions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xCor</strong> (<em>int</em>) &#8211; The x coordinate to start from.</li>
+<li><strong>yCor</strong> (<em>int</em>) &#8211; The y coordinate to start from.</li>
+<li><strong>xSpeed</strong> (<em>int</em>) &#8211; (<strong>OPTIONAL</strong>) Sets the starting speed in the x direction.</li>
+<li><strong>ySpeed</strong> (<em>int</em>) &#8211; (<strong>OPTIONAL</strong>) Sets the starting speed in the y direction.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.set_ship">
+<tt class="descname">set_ship</tt><big>(</big><em>ship</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.set_ship" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should only be called if you created a ship of your own.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ship</strong> (<em>SpaceShip</em>) &#8211; The ship to set as our main ship.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>it should be called INSTEAD of the setInitialShipCords method</strong></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.ship_down">
+<tt class="descname">ship_down</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.ship_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should be called only when a ship is destroyed, this removes one life
+from our available lives.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.should_end">
+<tt class="descname">should_end</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.should_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the game should end or not (if &#8220;q&#8221; was pressed or not)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.show_message">
+<tt class="descname">show_message</tt><big>(</big><em>title</em>, <em>msg</em><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.show_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method used to show messages in the game.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> (<em>str</em>) &#8211; The title of the message box.</li>
+<li><strong>msg</strong> (<em>str</em>) &#8211; The message to show in the message box.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.start_game">
+<tt class="descname">start_game</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.start_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is called to start our game (grphaics-wise).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>This method should not be called by you</strong></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="gameMaster.GameMaster.update_screen">
+<tt class="descname">update_screen</tt><big>(</big><big>)</big><a class="headerlink" href="#gameMaster.GameMaster.update_screen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the screen to update itself <strong>you should not call this method</strong></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="baseobject.html"
+                        title="previous chapter">BaseObject documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="objectshapes.html"
+                        title="next chapter">ObjectShapes documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/gamemaster.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="objectshapes.html" title="ObjectShapes documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="baseobject.html" title="BaseObject documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">Asteroids 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Intro Staff.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

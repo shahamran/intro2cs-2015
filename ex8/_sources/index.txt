@@ -1,0 +1,13 @@
+
+Welcome to Asteroids's documentation!
+=====================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   baseobject
+   gamemaster
+   objectshapes
+   originalgame

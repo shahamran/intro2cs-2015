@@ -1,0 +1,5 @@
+GameMaster documentation
+**************************
+
+.. autoclass:: gameMaster.GameMaster
+   :members:

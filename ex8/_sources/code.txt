@@ -1,0 +1,5 @@
+BaseObject documentation
+**************************
+
+.. autoclass:: baseObject.BaseObject
+   :members:
